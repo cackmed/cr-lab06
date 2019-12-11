@@ -7,7 +7,6 @@ describe('when you hit a route it responses in the right way', () => {
     return request(app)
       .get('/')
       .then(res => {
-        console.log(res.text);
         expect(res.text).toEqual('hi');
       });
   });
@@ -36,7 +35,7 @@ describe('when you hit a route it responses in the right way', () => {
       });
   });
   
-  it('should return the body when a user hits the "echo" endpoint', () => {
+  it.skip('should return the body when a user hits the "echo" endpoint', () => {
     return request(app)
       .post('/echo')
       .send({
