@@ -35,14 +35,14 @@ describe('when you hit a route it responses in the right way', () => {
       });
   });
   
-  it.skip('should return the body when a user hits the "echo" endpoint', () => {
+  it('should return the body when a user hits the "echo" endpoint', () => {
     return request(app)
       .post('/echo')
-      .send({
-        number: 4
-      })
+      .send('houston do you copy')
       .then(res => {
-        expect(res.text).toEqual('{"number":4}');
+        expect(res.text).toEqual('houston do you copy');
+        expect(res.status).toEqual(200);
+
       });
   });
 });
